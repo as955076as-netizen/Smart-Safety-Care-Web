@@ -52,4 +52,42 @@
 <img width="3200" height="2400" alt="B" src="https://github.com/user-attachments/assets/32bb61e4-4e46-48ec-a460-ec06eb8f8c85" />
 <img width="1886" height="1691" alt="Group 1362788845" src="https://github.com/user-attachments/assets/711018a6-4afe-43e9-b1ee-55bb6047672d" />
 
+-----------------------------------------------------------
 
+## 三、 安裝與使用教學 (Installation & Usage)
+
+### 📌 系統需求
+- **Node.js** (建議 v18 以上版本)
+- **Python 3** (建議 3.9 ~ 3.11 版本)
+- 一個視訊鏡頭 (Webcam)
+
+### 🚀 步驟一：下載專案
+您可以直接點擊 GitHub 右上角的 `Code` -> `Download ZIP` 並解壓縮到您的電腦中，或是透過指令：
+```bash
+git clone https://github.com/as955076as-netizen/Smart-Safety-Care-Web.git
+```
+
+### ⚙️ 步驟二：首次化安裝環境
+我們提供了一鍵安裝腳本，能自動為您建置前端與 AI 所需的全部環境：
+1. 進入專案資料夾，點擊兩下執行 **`⬇️首次安裝_Install.bat`**。
+2. 請耐心等待，系統會自動：
+   - 下載前端網頁套件 (`npm install`)
+   - 建立 Python 獨立虛擬環境 (`venv`) 
+   - 安裝 YOLO, OpenCV 等所有 AI 必備模組
+3. 看到「安裝完成」提示後，即可關閉該視窗。
+
+### ▶️ 步驟三：啟動系統
+1. 點擊兩下執行 **`▶️啟動_SmartCare.bat`**。
+2. 系統會自動開啟兩個終端機黑色視窗（請勿關閉它們）：
+   - `React Frontend`：負責網頁圖形介面。
+   - `AI Camera Server`：負責啟動攝影機並進行即時 AI 危險辨識。
+3. 等待幾秒鐘後，瀏覽器將會自動彈出並開啟監控首頁 (`http://localhost:5173`)。
+
+### 🛑 關閉系統
+當您不需要監控時，請點擊兩下執行 **`🛑關閉_SmartCare.bat`**。
+這會安全且徹底地關閉所有背景伺服器並釋放您的攝影機，確保硬體資源不被佔用與隱私安全。
+
+### 🌐 關於 GitHub Pages 部署版本
+本專案的網頁介面已部署至 GitHub Pages 上。但請留意：
+- 由於瀏覽器的安全性政策 (Mixed Content)，線上版 HTTPS 網頁無法直接存取您本地端 HTTP 的攝影機畫面。
+- 如果您希望在外網或手機上使用線上版網頁查看家中的鏡頭，建議您使用 [ngrok](https://ngrok.com/) 等工具，將本地端的 8080 port 轉發為 HTTPS 網址，然後再貼到系統設定的「後端 API 網址」中即可！
