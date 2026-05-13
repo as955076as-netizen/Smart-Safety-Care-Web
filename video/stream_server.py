@@ -56,6 +56,7 @@ def find_best_model():
     pt_dir = os.path.join(ROOT_DIR, 'pt')
     if os.path.exists(pt_dir):
         files = [f for f in os.listdir(pt_dir) if f.endswith('.pt')]
+        if 'best_end_k.pt' in files: return os.path.join(pt_dir, 'best_end_k.pt')
         if 'best.pt' in files: return os.path.join(pt_dir, 'best.pt')
         if 'best_end.pt' in files: return os.path.join(pt_dir, 'best_end.pt')
         if files: return os.path.join(pt_dir, files[0])
